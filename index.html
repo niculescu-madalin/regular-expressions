@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body {
+        font-family: monospace;
+        font-size: larger;
+        background-color: rgb(238, 238, 238);
+      }
+      h1 {
+        text-align: center;
+        margin-bottom: 0px;
+      }
+      #container {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        grid-template-rows: 1fr min-content;
+        padding: 16px;
+        gap: 4px;
+      }
+      #result {
+        background-color: white;
+        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+      }
+      #btn {
+        font-size: inherit;
+        font-family: inherit;
+        color: white;
+        background-color: rgb(68, 68, 68);
+        border-radius: 4px;
+        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+      }
+
+      #btn:hover {
+        background-color: rgb(45, 45, 45);
+      }
+
+      #btn:active {
+        background-color: rgb(0, 0, 0);
+      }
+      textarea {
+        font-size: inherit;
+        resize: none;
+        padding: 10px;
+        border-radius: 5px;
+        border-color: rgba(99, 99, 99, 0.5);
+      }
+      textarea:focus{
+        border-color: black;
+        outline-style:double;
+      }
+      #result {
+        padding: 10px;
+        border-radius: 5px;
+      }
+    </style>
+    <title>Regex</title>
+  </head>
+  <body>
+
+    <h1>Testare expresii regulate</h1>
+    <div id="container"> 
+      <textarea 
+        id="regex-text" 
+        rows="1"
+        placeholder="insereaza expresia regulata aici"></textarea>
+      <button type="button" id="btn">Cauta</button>
+      <textarea 
+        id="full-text" 
+        rows="20"
+        placeholder="insereaza textul de test aici"></textarea>
+      <span id="result">
+        Potriviri <hr>
+        <table id="table">
+        </table>
+      </span>
+    </div>
+
+    <script src="index.js"></script>
+  </body>
+</html>
