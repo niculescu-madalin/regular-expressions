@@ -1,17 +1,21 @@
 let btn = document.getElementById("btn");
 let fulltext = document.getElementById("full-text");
 let regextext = document.getElementById("regex-text");
-let resultbox = document.getElementById("result")
+let resultbox = document.getElementById("result");
+let smalltext = document.getElementById("small-text");
 
-btn.addEventListener("click", find)
+btn.addEventListener("click", find);
 
 function find(){  
     resultbox.innerHTML = "Potriviri <hr>";
     resultbox.style.backgroundColor = "";
     resultbox.style.color = "";
+    smalltext.style.color = "black";
+    smalltext.style.backgroundColor = "white";
 
     let expresion = regextext.value;
     let text = fulltext.value;
+    let testtext = smalltext.value;
 
     if(!expresion) {
         return;
@@ -27,11 +31,19 @@ function find(){
         return;
     }
 
+    if(regex.test(testtext)) {
+        smalltext.style.backgroundColor = "green";
+        smalltext.style.color = "white";
+    } else {
+        smalltext.style.backgroundColor = "red";
+        smalltext.style.color = "white";
+    }
+
     if(!text) {
-        resultbox.innerHTML += "Campul textului de text este gol";
+        resultbox.innerHTML += "Campul text 2 de text este gol<br>";
         return;
     }
-    
+
     let count = 0;
     while (result = regex.exec(text)) {
         if(result){

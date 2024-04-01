@@ -55,6 +55,13 @@
         padding: 10px;
         border-radius: 5px;
       }
+
+      #test-inputs {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr min-content;
+        gap: 5px;
+      }
     </style>
     <title>Regex</title>
   </head>
@@ -67,10 +74,16 @@
         rows="1"
         placeholder="insereaza expresia regulata aici"></textarea>
       <button type="button" id="btn">Cauta</button>
-      <textarea 
-        id="full-text" 
-        rows="20"
-        placeholder="insereaza textul de test aici"></textarea>
+      <div id="test-inputs">
+        <textarea 
+          id="small-text" 
+          rows="1"
+          placeholder="insereaza textul de test aici"></textarea>
+        <textarea 
+          id="full-text" 
+          rows="20"
+          placeholder="insereaza textul pentru gasirea de pattern-uri aici"></textarea>
+        </div>
       <span id="result">
         Potriviri <hr>
         <table id="table">
