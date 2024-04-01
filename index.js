@@ -32,7 +32,8 @@ function find(){
         return;
     }
 
-    if(regex.test(testtext)) {
+    let regexcopy = regex;
+    if(regexcopy.test(testtext)) {
         smalltext.style.backgroundColor = "green";
         smalltext.style.color = "white";
     } else {
