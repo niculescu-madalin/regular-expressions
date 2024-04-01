@@ -18,6 +18,7 @@ function find(){
     let testtext = smalltext.value;
 
     if(!expresion) {
+        resultbox.innerHTML += "Campul text pentru pattern este gol<br> ";
         return;
     }
 
@@ -47,7 +48,6 @@ function find(){
     let count = 0;
     while (result = regex.exec(text)) {
         if(result){
-            console.log(result, regex.lastIndex);
             resultbox.innerHTML += `${result} (${result.index} - ${regex.lastIndex})<br>`;
             count++ ;
         }
